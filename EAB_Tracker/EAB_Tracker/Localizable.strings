@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  EAB_Tracker
+
+  Created by Caleb Mackey on 6/14/16.
+  Copyright © 2016 Caleb Mackey. All rights reserved.
+*/
+
+"canopy_info" = "An Ash Tree in poor health has poor shape and color in the fall, and also fails to provide shade";
+"bark_info" = "Bark splitting and woodpecker damage are both symptoms of EAB infestation";
+"ash_info" = "A healthy Ash Tree has a full canopy and no bark damage";
+"beetle_info" = "The Beetle is Metallic Green in color and approximately 1/2 inch long";
+"larvae_info" = "When visible, the larvae is cream colored, slightly flattened and have pincer like appendages at the end of their abdomen";
+"exit_hole" = "D-Shaped Exit Holes - D shaped exit hole approx 1/8 in diameter";
+"s_gallary" = "S-Shaped Larval Gallery - serpentine shaped galleries packed with frass (larvae poop) and sawdust";
+

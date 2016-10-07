@@ -1,0 +1,589 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		11E1D6FE6D1160E24F1A705A /* Pods_EAB_Tracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C98283C91AE27642043C0B /* Pods_EAB_Tracker.framework */; };
+		DE7B6BD01C6156D4002B43DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B6BCF1C6156D4002B43DC /* AppDelegate.swift */; };
+		DE7B6BD21C6156D4002B43DC /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B6BD11C6156D4002B43DC /* MapViewController.swift */; };
+		DE7B6BD41C6156D4002B43DC /* FeatureTemplatePickerControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B6BD31C6156D4002B43DC /* FeatureTemplatePickerControl.swift */; };
+		DE7B6BD71C6156D4002B43DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE7B6BD51C6156D4002B43DC /* Main.storyboard */; };
+		DE7B6BD91C6156D4002B43DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE7B6BD81C6156D4002B43DC /* Assets.xcassets */; };
+		DE7B6BDC1C6156D4002B43DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE7B6BDA1C6156D4002B43DC /* LaunchScreen.storyboard */; };
+		DE7EADAA1D2F503C008D1EC0 /* EmailHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7EADA91D2F503C008D1EC0 /* EmailHelper.swift */; };
+		DE8198C71D97393D000216A0 /* AuthHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8198C61D97393D000216A0 /* AuthHelper.swift */; };
+		DE8198C91D97522C000216A0 /* eab.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = DE8198C81D97522C000216A0 /* eab.sqlite3 */; };
+		DE8198CD1D977009000216A0 /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8198CC1D977009000216A0 /* KeychainWrapper.m */; };
+		DE893AC51CE4139C00CA9999 /* EABInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE893AC41CE4139C00CA9999 /* EABInfo.swift */; };
+		DEBDF8821D10EEF6009C786B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DEBDF8811D10EEF6009C786B /* Localizable.strings */; };
+		DED348B81DA6035C006B8C01 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED348B71DA6035C006B8C01 /* SQLite.framework */; };
+		DED348B91DA6035C006B8C01 /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DED348B71DA6035C006B8C01 /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DED348C41DA603C7006B8C01 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DED3489F1DA601D5006B8C01 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247AD31C3F04ED00AE3E12;
+			remoteInfo = "SQLite iOS";
+		};
+		DED348C61DA603C7006B8C01 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DED3489F1DA601D5006B8C01 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247ADD1C3F04ED00AE3E12;
+			remoteInfo = "SQLiteTests iOS";
+		};
+		DED348C81DA603C7006B8C01 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DED3489F1DA601D5006B8C01 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247B3C1C3F3ED000AE3E12;
+			remoteInfo = "SQLite Mac";
+		};
+		DED348CA1DA603C7006B8C01 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DED3489F1DA601D5006B8C01 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247B451C3F3ED000AE3E12;
+			remoteInfo = "SQLiteTests Mac";
+		};
+		DED348CC1DA603C7006B8C01 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DED3489F1DA601D5006B8C01 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 03A65E5A1C6BB0F50062603F;
+			remoteInfo = "SQLite tvOS";
+		};
+		DED348CE1DA603C7006B8C01 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DED3489F1DA601D5006B8C01 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 03A65E631C6BB0F60062603F;
+			remoteInfo = "SQLiteTests tvOS";
+		};
+		DED348D01DA603C7006B8C01 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DED3489F1DA601D5006B8C01 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A121AC451CA35C79005A31D1;
+			remoteInfo = "SQLite watchOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DED348BA1DA6035D006B8C01 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DED348B91DA6035C006B8C01 /* SQLite.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		4771CBEEEAB909E5DB520D8C /* Pods-EAB_Tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EAB_Tracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EAB_Tracker/Pods-EAB_Tracker.debug.xcconfig"; sourceTree = "<group>"; };
+		84C98283C91AE27642043C0B /* Pods_EAB_Tracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EAB_Tracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C98466B96BA0788BA4A5C03 /* Pods-EAB_Tracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EAB_Tracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-EAB_Tracker/Pods-EAB_Tracker.release.xcconfig"; sourceTree = "<group>"; };
+		DE7B6BCC1C6156D4002B43DC /* EAB_Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EAB_Tracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE7B6BCF1C6156D4002B43DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DE7B6BD11C6156D4002B43DC /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		DE7B6BD31C6156D4002B43DC /* FeatureTemplatePickerControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureTemplatePickerControl.swift; sourceTree = "<group>"; };
+		DE7B6BD61C6156D4002B43DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DE7B6BD81C6156D4002B43DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DE7B6BDB1C6156D4002B43DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DE7B6BDD1C6156D4002B43DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE7EADA91D2F503C008D1EC0 /* EmailHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailHelper.swift; sourceTree = "<group>"; };
+		DE8198C61D97393D000216A0 /* AuthHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthHelper.swift; sourceTree = "<group>"; };
+		DE8198C81D97522C000216A0 /* eab.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = eab.sqlite3; sourceTree = "<group>"; };
+		DE8198CA1D977008000216A0 /* EAB_Tracker-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EAB_Tracker-Bridging-Header.h"; sourceTree = "<group>"; };
+		DE8198CB1D977009000216A0 /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainWrapper.h; sourceTree = "<group>"; };
+		DE8198CC1D977009000216A0 /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainWrapper.m; sourceTree = "<group>"; };
+		DE893AC41CE4139C00CA9999 /* EABInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EABInfo.swift; sourceTree = "<group>"; };
+		DEBDF8811D10EEF6009C786B /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		DED3489F1DA601D5006B8C01 /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = ../SQLite.swift/SQLite.xcodeproj; sourceTree = "<group>"; };
+		DED348B71DA6035C006B8C01 /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DE7B6BC91C6156D4002B43DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DED348B81DA6035C006B8C01 /* SQLite.framework in Frameworks */,
+				11E1D6FE6D1160E24F1A705A /* Pods_EAB_Tracker.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		82E03B2B1FC063146A576BCD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4771CBEEEAB909E5DB520D8C /* Pods-EAB_Tracker.debug.xcconfig */,
+				9C98466B96BA0788BA4A5C03 /* Pods-EAB_Tracker.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B6C5238526D94C5093465A6F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				84C98283C91AE27642043C0B /* Pods_EAB_Tracker.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DE7B6BC31C6156D4002B43DC = {
+			isa = PBXGroup;
+			children = (
+				DED348B71DA6035C006B8C01 /* SQLite.framework */,
+				DED3489F1DA601D5006B8C01 /* SQLite.xcodeproj */,
+				DE8198C31D96F832000216A0 /* Supporting Files */,
+				DE7B6BCE1C6156D4002B43DC /* EAB_Tracker */,
+				DE7B6BCD1C6156D4002B43DC /* Products */,
+				82E03B2B1FC063146A576BCD /* Pods */,
+				B6C5238526D94C5093465A6F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DE7B6BCD1C6156D4002B43DC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DE7B6BCC1C6156D4002B43DC /* EAB_Tracker.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DE7B6BCE1C6156D4002B43DC /* EAB_Tracker */ = {
+			isa = PBXGroup;
+			children = (
+				DE8198CB1D977009000216A0 /* KeychainWrapper.h */,
+				DE8198CC1D977009000216A0 /* KeychainWrapper.m */,
+				DE8198C61D97393D000216A0 /* AuthHelper.swift */,
+				DE7B6BCF1C6156D4002B43DC /* AppDelegate.swift */,
+				DE7B6BD11C6156D4002B43DC /* MapViewController.swift */,
+				DE7B6BD31C6156D4002B43DC /* FeatureTemplatePickerControl.swift */,
+				DE7B6BD51C6156D4002B43DC /* Main.storyboard */,
+				DE7B6BD81C6156D4002B43DC /* Assets.xcassets */,
+				DE7B6BDA1C6156D4002B43DC /* LaunchScreen.storyboard */,
+				DE7B6BDD1C6156D4002B43DC /* Info.plist */,
+				DE893AC41CE4139C00CA9999 /* EABInfo.swift */,
+				DEBDF8811D10EEF6009C786B /* Localizable.strings */,
+				DE7EADA91D2F503C008D1EC0 /* EmailHelper.swift */,
+				DE8198CA1D977008000216A0 /* EAB_Tracker-Bridging-Header.h */,
+			);
+			path = EAB_Tracker;
+			sourceTree = "<group>";
+		};
+		DE8198C31D96F832000216A0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DE8198C81D97522C000216A0 /* eab.sqlite3 */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DED348BB1DA603C7006B8C01 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DED348C51DA603C7006B8C01 /* SQLite.framework */,
+				DED348C71DA603C7006B8C01 /* SQLiteTests iOS.xctest */,
+				DED348C91DA603C7006B8C01 /* SQLite.framework */,
+				DED348CB1DA603C7006B8C01 /* SQLiteTests Mac.xctest */,
+				DED348CD1DA603C7006B8C01 /* SQLite.framework */,
+				DED348CF1DA603C7006B8C01 /* SQLiteTests tvOS.xctest */,
+				DED348D11DA603C7006B8C01 /* SQLite.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DE7B6BCB1C6156D4002B43DC /* EAB_Tracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE7B6BE01C6156D4002B43DC /* Build configuration list for PBXNativeTarget "EAB_Tracker" */;
+			buildPhases = (
+				E500B23D85239016A0278D9C /* Check Pods Manifest.lock */,
+				DE7B6BC81C6156D4002B43DC /* Sources */,
+				DE7B6BC91C6156D4002B43DC /* Frameworks */,
+				DE7B6BCA1C6156D4002B43DC /* Resources */,
+				F87A29EB7E46C189DC6C01D1 /* Embed Pods Frameworks */,
+				55ACCF90DDA6F55F0F092812 /* Copy Pods Resources */,
+				DED348BA1DA6035D006B8C01 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EAB_Tracker;
+			productName = EAB_Tracker;
+			productReference = DE7B6BCC1C6156D4002B43DC /* EAB_Tracker.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DE7B6BC41C6156D4002B43DC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Caleb Mackey";
+				TargetAttributes = {
+					DE7B6BCB1C6156D4002B43DC = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = XNDMJAEE9N;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = DE7B6BC71C6156D4002B43DC /* Build configuration list for PBXProject "EAB_Tracker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DE7B6BC31C6156D4002B43DC;
+			productRefGroup = DE7B6BCD1C6156D4002B43DC /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = DED348BB1DA603C7006B8C01 /* Products */;
+					ProjectRef = DED3489F1DA601D5006B8C01 /* SQLite.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				DE7B6BCB1C6156D4002B43DC /* EAB_Tracker */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		DED348C51DA603C7006B8C01 /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = DED348C41DA603C7006B8C01 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DED348C71DA603C7006B8C01 /* SQLiteTests iOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SQLiteTests iOS.xctest";
+			remoteRef = DED348C61DA603C7006B8C01 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DED348C91DA603C7006B8C01 /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = DED348C81DA603C7006B8C01 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DED348CB1DA603C7006B8C01 /* SQLiteTests Mac.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SQLiteTests Mac.xctest";
+			remoteRef = DED348CA1DA603C7006B8C01 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DED348CD1DA603C7006B8C01 /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = DED348CC1DA603C7006B8C01 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DED348CF1DA603C7006B8C01 /* SQLiteTests tvOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SQLiteTests tvOS.xctest";
+			remoteRef = DED348CE1DA603C7006B8C01 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DED348D11DA603C7006B8C01 /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = DED348D01DA603C7006B8C01 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DE7B6BCA1C6156D4002B43DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE7B6BDC1C6156D4002B43DC /* LaunchScreen.storyboard in Resources */,
+				DEBDF8821D10EEF6009C786B /* Localizable.strings in Resources */,
+				DE8198C91D97522C000216A0 /* eab.sqlite3 in Resources */,
+				DE7B6BD91C6156D4002B43DC /* Assets.xcassets in Resources */,
+				DE7B6BD71C6156D4002B43DC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		55ACCF90DDA6F55F0F092812 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EAB_Tracker/Pods-EAB_Tracker-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E500B23D85239016A0278D9C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F87A29EB7E46C189DC6C01D1 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EAB_Tracker/Pods-EAB_Tracker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DE7B6BC81C6156D4002B43DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE893AC51CE4139C00CA9999 /* EABInfo.swift in Sources */,
+				DE7B6BD41C6156D4002B43DC /* FeatureTemplatePickerControl.swift in Sources */,
+				DE7B6BD01C6156D4002B43DC /* AppDelegate.swift in Sources */,
+				DE7B6BD21C6156D4002B43DC /* MapViewController.swift in Sources */,
+				DE8198CD1D977009000216A0 /* KeychainWrapper.m in Sources */,
+				DE7EADAA1D2F503C008D1EC0 /* EmailHelper.swift in Sources */,
+				DE8198C71D97393D000216A0 /* AuthHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DE7B6BD51C6156D4002B43DC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE7B6BD61C6156D4002B43DC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DE7B6BDA1C6156D4002B43DC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE7B6BDB1C6156D4002B43DC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DE7B6BDE1C6156D4002B43DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DE7B6BDF1C6156D4002B43DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 2.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DE7B6BE11C6156D4002B43DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4771CBEEEAB909E5DB520D8C /* Pods-EAB_Tracker.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = EAB_Tracker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.calebmackey.EAB-Tracker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "EAB_Tracker/EAB_Tracker-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
+			};
+			name = Debug;
+		};
+		DE7B6BE21C6156D4002B43DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C98466B96BA0788BA4A5C03 /* Pods-EAB_Tracker.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = EAB_Tracker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.calebmackey.EAB-Tracker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "EAB_Tracker/EAB_Tracker-Bridging-Header.h";
+				SWIFT_VERSION = 2.3;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DE7B6BC71C6156D4002B43DC /* Build configuration list for PBXProject "EAB_Tracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE7B6BDE1C6156D4002B43DC /* Debug */,
+				DE7B6BDF1C6156D4002B43DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE7B6BE01C6156D4002B43DC /* Build configuration list for PBXNativeTarget "EAB_Tracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE7B6BE11C6156D4002B43DC /* Debug */,
+				DE7B6BE21C6156D4002B43DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DE7B6BC41C6156D4002B43DC /* Project object */;
+}
