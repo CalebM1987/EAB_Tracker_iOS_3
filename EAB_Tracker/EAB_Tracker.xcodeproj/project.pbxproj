@@ -170,21 +170,14 @@
 		DE7B6BCE1C6156D4002B43DC /* EAB_Tracker */ = {
 			isa = PBXGroup;
 			children = (
-				DE8198CB1D977009000216A0 /* KeychainWrapper.h */,
-				DE8198CC1D977009000216A0 /* KeychainWrapper.m */,
-				DE8198C61D97393D000216A0 /* AuthHelper.swift */,
 				DE7B6BCF1C6156D4002B43DC /* AppDelegate.swift */,
-				DE7B6BD11C6156D4002B43DC /* MapViewController.swift */,
-				DE7B6BD31C6156D4002B43DC /* FeatureTemplatePickerControl.swift */,
-				DE7B6BD51C6156D4002B43DC /* Main.storyboard */,
+				DEADCF961DA9780B00803B88 /* Resources */,
+				DEADCF951DA977E100803B88 /* Views */,
+				DEADCF941DA9778B00803B88 /* Helper */,
+				DEADCF931DA9776400803B88 /* ViewControllers */,
 				DE7B6BD81C6156D4002B43DC /* Assets.xcassets */,
 				DE7B6BDA1C6156D4002B43DC /* LaunchScreen.storyboard */,
 				DE7B6BDD1C6156D4002B43DC /* Info.plist */,
-				DE893AC41CE4139C00CA9999 /* EABInfo.swift */,
-				DEBDF8811D10EEF6009C786B /* Localizable.strings */,
-				DE7EADA91D2F503C008D1EC0 /* EmailHelper.swift */,
-				DE8198CA1D977008000216A0 /* EAB_Tracker-Bridging-Header.h */,
-				DEADCF8A1DA9683500803B88 /* InfoCell.swift */,
 			);
 			path = EAB_Tracker;
 			sourceTree = "<group>";
@@ -195,6 +188,45 @@
 				DE8198C81D97522C000216A0 /* eab.sqlite3 */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DEADCF931DA9776400803B88 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DEADCF8A1DA9683500803B88 /* InfoCell.swift */,
+				DE7B6BD11C6156D4002B43DC /* MapViewController.swift */,
+				DE7B6BD31C6156D4002B43DC /* FeatureTemplatePickerControl.swift */,
+				DE893AC41CE4139C00CA9999 /* EABInfo.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		DEADCF941DA9778B00803B88 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				DE8198C61D97393D000216A0 /* AuthHelper.swift */,
+				DE7EADA91D2F503C008D1EC0 /* EmailHelper.swift */,
+				DE8198CB1D977009000216A0 /* KeychainWrapper.h */,
+				DE8198CC1D977009000216A0 /* KeychainWrapper.m */,
+				DE8198CA1D977008000216A0 /* EAB_Tracker-Bridging-Header.h */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		DEADCF951DA977E100803B88 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE7B6BD51C6156D4002B43DC /* Main.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		DEADCF961DA9780B00803B88 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DEBDF8811D10EEF6009C786B /* Localizable.strings */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		DED348BB1DA603C7006B8C01 /* Products */ = {

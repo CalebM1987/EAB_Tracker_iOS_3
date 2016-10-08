@@ -27,6 +27,7 @@
                                             <segment title="Street"/>
                                             <segment title="Aerial"/>
                                         </segments>
+                                        <color key="tintColor" red="0.41568627450980389" green="0.36862745098039218" blue="0.32156862745098036" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="basemapChanged:" destination="9pv-A4-QxB" eventType="valueChanged" id="eMJ-FL-QLJ"/>
                                         </connections>
@@ -122,12 +123,12 @@
                                 </items>
                                 <color key="barTintColor" red="0.41568627450980389" green="0.36862745098039218" blue="0.32156862745098036" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </toolbar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Visual Cue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6aJ-JN-cyw" userLabel="Visual Cue">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Visual Cue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6aJ-JN-cyw" userLabel="Visual Cue">
                                 <frame key="frameInset" minX="100" minY="31" width="81" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration" label="Visual Cue"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -151,10 +152,10 @@
             </objects>
             <point key="canvasLocation" x="839" y="-280"/>
         </scene>
-        <!--EAB Info-->
+        <!--Identification-->
         <scene sceneID="1vA-hc-Zdb">
             <objects>
-                <viewController title="EAB Info" id="Lgn-vc-rjP" customClass="EABInfo" customModule="EAB_Tracker" sceneMemberID="viewController">
+                <viewController title="EAB Info" id="Lgn-vc-rjP" userLabel="Identification" customClass="EABInfo" customModule="EAB_Tracker" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0Az-fQ-xno"/>
                         <viewControllerLayoutGuide type="bottom" id="qgM-a9-MDg"/>
@@ -168,24 +169,24 @@
                                 <color key="sectionIndexColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="eabCell" textLabel="S2p-Nj-uYp" style="IBUITableViewCellStyleDefault" id="zV3-6q-E9M">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="eabCell" textLabel="S2p-Nj-uYp" style="IBUITableViewCellStyleDefault" id="zV3-6q-E9M" customClass="InfoCell" customModule="EAB_Tracker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zV3-6q-E9M" id="sGT-73-gph">
-                                            <frame key="frameInset" width="375" height="43.5"/>
+                                            <frame key="frameInset" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="S2p-Nj-uYp">
-                                                    <frame key="frameInset" minX="15" width="345" height="43.5"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="S2p-Nj-uYp">
+                                                    <frame key="frameInset" minX="15" width="345" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" red="0.35686274509803922" green="0.44313725490196076" blue="0.24313725490196078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.35686274509803922" green="0.44313725490196076" blue="0.24313725490196078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -201,6 +202,18 @@
                                         <connections>
                                             <action selector="goBackToMap:" destination="Lgn-vc-rjP" id="p2K-UM-kyz"/>
                                         </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="BsH-HE-dnV"/>
+                                    <barButtonItem style="plain" id="hQL-Pl-l26">
+                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="IFu-7W-GBh">
+                                            <rect key="frame" x="149" y="7" width="210" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <segments>
+                                                <segment title="EAB"/>
+                                                <segment title="Ash Trees"/>
+                                            </segments>
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </segmentedControl>
                                     </barButtonItem>
                                 </items>
                                 <color key="barTintColor" red="0.41568627450980389" green="0.36862745098039218" blue="0.32156862745098036" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -218,14 +231,14 @@
                             <constraint firstItem="fUc-de-O9A" firstAttribute="top" secondItem="z9E-C1-5Ll" secondAttribute="bottom" id="s2r-tZ-XUB"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="EAB Info" image="second" id="Qff-V3-sni"/>
+                    <tabBarItem key="tabBarItem" title="Identification" image="second" id="Qff-V3-sni" userLabel="Identification"/>
                     <connections>
                         <outlet property="tableView" destination="fUc-de-O9A" id="mXu-dJ-gOY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w2y-J6-6gw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="400" y="483"/>
+            <point key="canvasLocation" x="399.5" y="482.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
