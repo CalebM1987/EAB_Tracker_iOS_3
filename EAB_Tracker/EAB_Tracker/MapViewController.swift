@@ -78,7 +78,6 @@ class MapViewController: UIViewController, AGSWebMapDelegate, AGSCalloutDelegate
         let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
         self.featureTemplatePickerController = storyboard.instantiateViewControllerWithIdentifier("FeatureTemplatePickerController") as! FeatureTemplatePickerController
         self.featureTemplatePickerController.delegate = self
-        print(eabInfoList)
         
     }
     

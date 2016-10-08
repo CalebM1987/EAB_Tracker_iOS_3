@@ -8,6 +8,8 @@
 
 import UIKit
 
+var tabBar: UITabBarController!
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -15,7 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        if self.window!.rootViewController as? UITabBarController != nil {
+            tabBar = self.window!.rootViewController as! UITabBarController
+            //tabbar.selectedIndex = 0
+        }
         return true
     }
 

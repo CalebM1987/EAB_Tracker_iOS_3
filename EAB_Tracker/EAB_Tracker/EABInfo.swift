@@ -21,6 +21,9 @@ class EABInfo: UIViewController, UITableViewDelegate, UITableViewDataSource {
     let cellIdentifier = "eabCell"
     let cellSpacingHeight: CGFloat = 20
     
+    @IBAction func goBackToMap(sender: AnyObject) {
+        tabBar.selectedIndex = 0
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
