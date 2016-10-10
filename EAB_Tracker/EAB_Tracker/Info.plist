@@ -70,6 +70,10 @@
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>This app would like to use your location services</string>
+	<key>NSCameraUsageDescription</key>
+	<string>This app would like to use your camera.  Photos are required to report any sightings of EAB infestations</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>This app would like to access your photo library.  Photos are required to report any sightings of EAB infestations</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

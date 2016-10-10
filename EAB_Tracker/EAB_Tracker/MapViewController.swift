@@ -62,6 +62,12 @@ class MapViewController: UIViewController, AGSWebMapDelegate, AGSCalloutDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // set up eab info tables
+        let eabCategories = tableCategoriesFromBundle("eab")
+        eabTableResource = TableResource(type: "eab", categories: eabCategories)
+        let ashCategories = tableCategoriesFromBundle("ash")
+        ashTableResource = TableResource(type: "ash", categories: ashCategories)
+        
         // Create a webmap and open it into the map
         self.webMapId = "caee4b7fdf5c49c285995b5d1b25e123"
         self.webMap = AGSWebMap(itemId: self.webMapId, credential: nil)
@@ -205,16 +211,7 @@ class MapViewController: UIViewController, AGSWebMapDelegate, AGSCalloutDelegate
             
             //...we post edits to the attachments
             let attMgr = featureLayer.attachmentManagerForFeature(self.popupVC.currentPopup.graphic)
-            //let attMgr = featureLayer.attachmentManagerForFeature(self.newSighting)
             attMgr.delegate = self
-            
-            // add Attachments(attMgr.featureObjectId)
-            /*
-            for (img, imgData) in self.collectedImages {
-                let oid = attMgr.featureObjectId
-                attMgr.addAttachmentWithData(imgData, name: img, contentType: "image/png")
-                print("added attachment \(img) for ID \(oid)")
-            }*/
             
             // ORIGINALLY DELETING HERE, REMOVE IF DELETING AFTER SENDING AS EMAIL ATTACHMENTS
             //self.collectedImages.removeAll()
@@ -359,9 +356,13 @@ class MapViewController: UIViewController, AGSWebMapDelegate, AGSCalloutDelegate
         
         //Only for iPad, set presentation style to Form sheet
         //We don't want it to cover the entire screen
-        self.popupVC.style = .Default
+        self.popupVC.style = .CustomColor
         self.popupVC.delegate = self
         self.popupVC.modalPresentationStyle = .FormSheet
+        self.popupVC.styleColor = UIColor(red: 106/255, green: 94/255, blue: 82/255, alpha: 1)
+        self.popupVC.barItemTintColor = UIColor.whiteColor()
+        self.popupVC.headlineColor = UIColor.whiteColor()
+        self.popupVC.barTitleTintColor = UIColor.whiteColor()
         
         //Animate by flipping horizontally
         self.popupVC.modalTransitionStyle = .FlipHorizontal
@@ -429,8 +430,12 @@ class MapViewController: UIViewController, AGSWebMapDelegate, AGSCalloutDelegate
             if self.popupVC == nil {
                 //Create a popupsContainer view controller with the popups
                 self.popupVC = AGSPopupsContainerViewController(popups: popups, usingNavigationControllerStack: false)
-                self.popupVC.style = .Default
+                self.popupVC.style = .CustomColor
                 self.popupVC.delegate = self
+                self.popupVC.styleColor = UIColor(red: 106/255, green: 94/255, blue: 82/255, alpha: 1)
+                self.popupVC.barItemTintColor = UIColor.whiteColor()
+                self.popupVC.headlineColor = UIColor.whiteColor()
+                self.popupVC.barTitleTintColor = UIColor.whiteColor()
                 
             }else{
                 self.popupVC.showAdditionalPopups(popups)
@@ -459,7 +464,7 @@ class MapViewController: UIViewController, AGSWebMapDelegate, AGSCalloutDelegate
                 self.activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .White)
                 let blankButton = UIBarButtonItem(customView: self.activityIndicator)
                 self.popupVC.actionButton = blankButton
-                self.activityIndicator.startAnimating()
+                //self.activityIndicator.startAnimating()
             }
             
         }
@@ -660,7 +665,6 @@ class MapViewController: UIViewController, AGSWebMapDelegate, AGSCalloutDelegate
     func presentFeatureTemplatePicker() {
         
         self.featureTemplatePickerController.modalPresentationStyle = .FormSheet
-        
         self.presentViewController(self.featureTemplatePickerController, animated: true, completion: nil)
     }
     
@@ -670,7 +674,7 @@ class MapViewController: UIViewController, AGSWebMapDelegate, AGSCalloutDelegate
     //
     // get photos from user
     @IBAction func takePhoto(sender: UIBarButtonItem) {
-        registerLocation()
+        //registerLocation()
         // clear collected photos
         self.collectedImages.removeAll()
         
@@ -791,7 +795,6 @@ class MapViewController: UIViewController, AGSWebMapDelegate, AGSCalloutDelegate
     }
     
     // MARK: Authentication
-    
     func auth_wrapper(usr: String, pw: String, handleFailure: Bool = true) -> Void {
         authenticate(usr, pw: pw)
         if isAdmin {
@@ -897,13 +900,10 @@ class MapViewController: UIViewController, AGSWebMapDelegate, AGSCalloutDelegate
                 pwField.becomeFirstResponder()
             }
             
-            
         }
         let cancel = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
         pwAlert.addAction(cancel)
         self.presentViewController(pwAlert, animated: true, completion: nil)
     }
-
-    
 }
 

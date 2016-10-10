@@ -7,64 +7,120 @@
 //
 import UIKit
 
-var eabInfoList = [[NSLocalizedString("beetle_info", comment:""), "adult_beetle.png"],
-                   [NSLocalizedString("larvae_info", comment:""), "larvae.png"],
-                   [NSLocalizedString("bark_info", comment:""), "ash_vertical_split.png"],
-                   [NSLocalizedString("exit_hole", comment:""), "exit_hole.png"],
-                   [NSLocalizedString("s_gallary", comment:""), "s_gallery.png"]]
-
 var defaultSize = CGSize(width: 300, height: 250)
+
+var selectedTableResource = eabTableResource
+var currentTableData = "eab"
 
 class EABInfo: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBAction func infoChanged(sender: AnyObject) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            if currentTableData != "eab" {
+                selectedTableResource = eabTableResource
+                handleRefresh(refreshControl)
+                currentTableData = "eab"
+                scrollToTop()
+            }
+        case 1:
+            if currentTableData != "ash" {
+                selectedTableResource = ashTableResource
+                handleRefresh(refreshControl)
+                currentTableData = "ash"
+                scrollToTop()
+            }
+        default:
+            if currentTableData != "eab" {
+                selectedTableResource = eabTableResource
+                handleRefresh(refreshControl)
+                currentTableData = "eab"
+                scrollToTop()
+            }
+        }
+    }
+    
+    
     @IBOutlet weak var tableView: UITableView!
     let cellIdentifier = "eabCell"
-    let cellSpacingHeight: CGFloat = 20
+    let cellSpacingHeight: CGFloat = 80
     
     @IBAction func goBackToMap(sender: AnyObject) {
         tabBar.selectedIndex = 0
     }
+    
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(handleRefresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        
+        return refreshControl
+    }()
+    
+    func dismissFullscreenImage(sender: UITapGestureRecognizer) {
+        sender.view?.removeFromSuperview()
+    }
+    
+    func handleRefresh(refreshControl: UIRefreshControl) {
+        self.tableView.reloadData()
+        refreshControl.endRefreshing()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
-        tableView.rowHeight = 300.0
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 300
         
     }
     
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return eabInfoList.count
+        return selectedTableResource.categories.count
     }
     
     // There is just one row in every section
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return selectedTableResource.categories[section].photos.count
     }
+    
     
     // Set the spacing between sections
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return cellSpacingHeight
     }
     
-    // Make the background color show through
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView()
-        headerView.backgroundColor = UIColor.clearColor()
-        return headerView
+    func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int)
+    {
+        let header:UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
+        
+        header.textLabel!.textColor = UIColor.whiteColor()
+        header.textLabel!.font = UIFont.boldSystemFontOfSize(18)
+        header.textLabel!.frame = header.frame
+        header.backgroundView?.backgroundColor = UIColor.darkGrayColor()
+        header.textLabel!.textAlignment = NSTextAlignment.Center
+        header.textLabel!.text = selectedTableResource.categories[section].name
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier(cellIdentifier)! as UITableViewCell
-        let info = eabInfoList[indexPath.section]
-        cell.textLabel?.text = info[0]
-        cell.textLabel?.numberOfLines = 0
-        cell.textLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
-        cell.imageView?.image = resizeImage(UIImage(named: info[1])!, toSize: defaultSize)
+        let cell = self.tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! InfoCell
+        let info = selectedTableResource.categories[indexPath.section].photos[indexPath.row]
+        cell.detail.text = info.description
+        cell.detail.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        cell.detailImage.image = info.image
+        cell.selectionStyle = .None
         cell.backgroundColor = UIColor.darkGrayColor()
-        cell.textLabel?.textColor = UIColor.whiteColor()
-        
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let info = selectedTableResource.categories[indexPath.section].photos[indexPath.row]
+        let newImageView = UIImageView(image: info.image)
+        newImageView.frame = self.view.frame
+        newImageView.backgroundColor = UIColor(red: 91/255, green: 113/255, blue: 62/255, alpha: 1)
+        newImageView.contentMode = .ScaleAspectFit
+        newImageView.userInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissFullscreenImage(_:)))
+        newImageView.addGestureRecognizer(tap)
+        self.view.addSubview(newImageView)
     }
     
     
@@ -73,18 +129,14 @@ class EABInfo: UIViewController, UITableViewDelegate, UITableViewDataSource {
         // Dispose of any resources that can be recreated.
     }
     
-    func resizeImage(image: UIImage, toSize newSize: CGSize) -> UIImage {
-        let newRect = CGRectIntegral(CGRectMake(0,0, newSize.width, newSize.height))
-        UIGraphicsBeginImageContextWithOptions(newSize, false, 0)
-        let context = UIGraphicsGetCurrentContext()
-        CGContextSetInterpolationQuality(context!, .High)
-        let flipVertical = CGAffineTransformMake(1, 0, 0, -1, 0, newSize.height)
-        CGContextConcatCTM(context!, flipVertical)
-        CGContextDrawImage(context!, newRect, image.CGImage!)
-        let newImage = UIImage(CGImage: CGBitmapContextCreateImage(context!)!)
-        UIGraphicsEndImageContext()
-        return newImage
+    func scrollToTop() {
+        if (self.numberOfSectionsInTableView(self.tableView) > 0 ) {
+            
+            let top = NSIndexPath(forRow: Foundation.NSNotFound, inSection: 0);
+            self.tableView.scrollToRowAtIndexPath(top, atScrollPosition: .Top, animated: true);
+        }
     }
+    
     
     
 }

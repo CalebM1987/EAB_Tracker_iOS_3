@@ -20,6 +20,9 @@
 		DE8198CD1D977009000216A0 /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8198CC1D977009000216A0 /* KeychainWrapper.m */; };
 		DE893AC51CE4139C00CA9999 /* EABInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE893AC41CE4139C00CA9999 /* EABInfo.swift */; };
 		DEADCF8B1DA9683500803B88 /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEADCF8A1DA9683500803B88 /* InfoCell.swift */; };
+		DEADCF981DAAD1FC00803B88 /* ImageResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEADCF971DAAD1FC00803B88 /* ImageResources.swift */; };
+		DEADCF9B1DAAEC8400803B88 /* ash.json in Resources */ = {isa = PBXBuildFile; fileRef = DEADCF991DAAEC8400803B88 /* ash.json */; };
+		DEADCF9C1DAAEC8400803B88 /* eab.json in Resources */ = {isa = PBXBuildFile; fileRef = DEADCF9A1DAAEC8400803B88 /* eab.json */; };
 		DEBDF8821D10EEF6009C786B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DEBDF8811D10EEF6009C786B /* Localizable.strings */; };
 		DED348B81DA6035C006B8C01 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED348B71DA6035C006B8C01 /* SQLite.framework */; };
 		DED348B91DA6035C006B8C01 /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DED348B71DA6035C006B8C01 /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -111,6 +114,9 @@
 		DE8198CC1D977009000216A0 /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainWrapper.m; sourceTree = "<group>"; };
 		DE893AC41CE4139C00CA9999 /* EABInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EABInfo.swift; sourceTree = "<group>"; };
 		DEADCF8A1DA9683500803B88 /* InfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
+		DEADCF971DAAD1FC00803B88 /* ImageResources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageResources.swift; sourceTree = "<group>"; };
+		DEADCF991DAAEC8400803B88 /* ash.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = ash.json; path = ../../../../Documents/Caleb/ash.json; sourceTree = "<group>"; };
+		DEADCF9A1DAAEC8400803B88 /* eab.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = eab.json; path = ../../../../Documents/Caleb/eab.json; sourceTree = "<group>"; };
 		DEBDF8811D10EEF6009C786B /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		DED3489F1DA601D5006B8C01 /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = ../SQLite.swift/SQLite.xcodeproj; sourceTree = "<group>"; };
 		DED348B71DA6035C006B8C01 /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,6 +191,8 @@
 		DE8198C31D96F832000216A0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DEADCF991DAAEC8400803B88 /* ash.json */,
+				DEADCF9A1DAAEC8400803B88 /* eab.json */,
 				DE8198C81D97522C000216A0 /* eab.sqlite3 */,
 			);
 			name = "Supporting Files";
@@ -209,6 +217,7 @@
 				DE8198CB1D977009000216A0 /* KeychainWrapper.h */,
 				DE8198CC1D977009000216A0 /* KeychainWrapper.m */,
 				DE8198CA1D977008000216A0 /* EAB_Tracker-Bridging-Header.h */,
+				DEADCF971DAAD1FC00803B88 /* ImageResources.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -371,6 +380,8 @@
 			files = (
 				DE7B6BDC1C6156D4002B43DC /* LaunchScreen.storyboard in Resources */,
 				DEBDF8821D10EEF6009C786B /* Localizable.strings in Resources */,
+				DEADCF9B1DAAEC8400803B88 /* ash.json in Resources */,
+				DEADCF9C1DAAEC8400803B88 /* eab.json in Resources */,
 				DE8198C91D97522C000216A0 /* eab.sqlite3 in Resources */,
 				DE7B6BD91C6156D4002B43DC /* Assets.xcassets in Resources */,
 				DE7B6BD71C6156D4002B43DC /* Main.storyboard in Resources */,
@@ -434,6 +445,7 @@
 			files = (
 				DE893AC51CE4139C00CA9999 /* EABInfo.swift in Sources */,
 				DE7B6BD41C6156D4002B43DC /* FeatureTemplatePickerControl.swift in Sources */,
+				DEADCF981DAAD1FC00803B88 /* ImageResources.swift in Sources */,
 				DE7B6BD01C6156D4002B43DC /* AppDelegate.swift in Sources */,
 				DE7B6BD21C6156D4002B43DC /* MapViewController.swift in Sources */,
 				DE8198CD1D977009000216A0 /* KeychainWrapper.m in Sources */,
