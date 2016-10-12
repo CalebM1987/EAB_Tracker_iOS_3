@@ -7,7 +7,7 @@
 //
 import UIKit
 
-var defaultSize = CGSize(width: 300, height: 250)
+var defaultSize = CGSize(width: 300, height: 300)
 
 var selectedTableResource = eabTableResource
 var currentTableData = "eab"

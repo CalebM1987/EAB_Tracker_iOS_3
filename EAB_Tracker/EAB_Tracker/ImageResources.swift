@@ -13,6 +13,8 @@ var ashTableResource: TableResource!
 struct ImageResource {
     let image: UIImage
     let description: String
+    let imageName: String
+    
 }
 
 struct Category {
@@ -30,19 +32,30 @@ struct TableResource {
     }
 }
 
-func resizeImage(image: UIImage, toSize newSize: CGSize) -> UIImage {
-    let newRect = CGRectIntegral(CGRectMake(0,0, newSize.width, newSize.height))
-    UIGraphicsBeginImageContextWithOptions(newSize, false, 0)
-    let context = UIGraphicsGetCurrentContext()
-    CGContextSetInterpolationQuality(context!, .High)
-    let flipVertical = CGAffineTransformMake(1, 0, 0, -1, 0, newSize.height)
-    CGContextConcatCTM(context!, flipVertical)
-    CGContextDrawImage(context!, newRect, image.CGImage!)
-    let newImage = UIImage(CGImage: CGBitmapContextCreateImage(context!)!)
-    UIGraphicsEndImageContext()
-    return newImage
+extension UIImage {
+    func imageWithSize(size:CGSize) -> UIImage
+    {
+        var scaledImageRect = CGRect.zero;
+        
+        let aspectWidth:CGFloat = size.width / self.size.width;
+        let aspectHeight:CGFloat = size.height / self.size.height;
+        let aspectRatio:CGFloat = min(aspectWidth, aspectHeight);
+        
+        scaledImageRect.size.width = self.size.width * aspectRatio;
+        scaledImageRect.size.height = self.size.height * aspectRatio;
+        scaledImageRect.origin.x = (size.width - scaledImageRect.size.width) / 2.0;
+        scaledImageRect.origin.y = (size.height - scaledImageRect.size.height) / 2.0;
+        
+        UIGraphicsBeginImageContextWithOptions(size, false, 0);
+        
+        self.drawInRect(scaledImageRect);
+        
+        let scaledImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+        return scaledImage!;
+    }
 }
-
 
 func tableCategoriesFromBundle(type: String) -> [Category] {
     var categories = [Category]()
@@ -82,14 +95,14 @@ func tableCategoriesFromBundle(type: String) -> [Category] {
             var photos = [ImageResource]()
             for photo in photosObject! {
                 let description = photo["description"]!
-                let image = UIImage(named: photo["image"]!)
+                let image = UIImage(named: photo["image"]!)?.imageWithSize(defaultSize)
                 /*
                 let size = image?.size
                 if size!.height < 125 {
                     let newSize = CGSize(width: size!.height * 1.1, height: size!.width * 1.1)
                     image = resizeImage(image!, toSize: newSize)
                 }*/
-                let imResource = ImageResource(image: image!, description: description)
+                let imResource = ImageResource(image: image!, description: description, imageName: photo["image"]!)
                 photos.append(imResource)
             }
             
